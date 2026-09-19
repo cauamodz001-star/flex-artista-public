@@ -7,7 +7,7 @@ LIBRARY_NAME = dylibtest
 dylibtest_FILES = Tweak.x MyGoldAPI.mm
 dylibtest_CFLAGS = -fobjc-arc
 dylibtest_LIBRARIES = z
-dylibtest_FRAMEWORKS = UIKit Foundation CommonCrypto
+dylibtest_FRAMEWORKS = UIKit Foundation
 # Assets visuais usados pelo menu UIKit
 dylibtest_RESOURCES = Resources/Debrosee-ALPnL.ttf Resources/profile-reference.jpg
 
