@@ -590,6 +590,45 @@ static void dylibtestApplyNavigationBarCustomization(UIWindow *window) {
     tabs.tabBar.unselectedItemTintColor = [UIColor colorWithWhite:0.52 alpha:1.0];
 }
 
+static UIColor *dylibtestRedHookColor(void) {
+    NSString *hex = [[NSUserDefaults standardUserDefaults] stringForKey:@"FlexRedBannerColor"];
+    if (hex.length == 0) return [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+    unsigned value = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:[hex stringByReplacingOccurrencesOfString:@"#" withString:@""]];
+    if (![scanner scanHexInt:&value]) return [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+    return [UIColor colorWithRed:((value >> 16) & 0xFF) / 255.0 green:((value >> 8) & 0xFF) / 255.0 blue:(value & 0xFF) / 255.0 alpha:1.0];
+}
+
+static BOOL dylibtestLooksLikeRedBanner(UIView *view, UIWindow *window) {
+    if (!view || view == window || view.hidden) return NO;
+    CGRect frame = [view.superview convertRect:view.frame toView:window];
+    if (CGRectGetWidth(frame) < window.bounds.size.width * 0.70 || CGRectGetHeight(frame) < 24.0 || CGRectGetHeight(frame) > 110.0) return NO;
+    UIColor *color = view.backgroundColor;
+    CGFloat red = 0, green = 0, blue = 0, alpha = 0;
+    if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) return NO;
+    return alpha > 0.25 && red > 0.75 && red > green * 2.2 && red > blue * 2.2;
+}
+
+static void dylibtestConfigureRedBanner(UIView *view) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL hidden = [defaults boolForKey:@"FlexRedBannerHidden"];
+    NSString *replacement = [defaults stringForKey:@"FlexRedBannerText"];
+    view.hidden = hidden;
+    if (!hidden) view.backgroundColor = dylibtestRedHookColor();
+    for (UIView *child in view.subviews) {
+        if ([child isKindOfClass:[UILabel class]] && replacement.length > 0) ((UILabel *)child).text = replacement;
+        dylibtestConfigureRedBanner(child);
+    }
+}
+
+static void dylibtestApplyRedBannerHook(UIWindow *window) {
+    if (!window) return;
+    for (UIView *subview in window.subviews) {
+        if (dylibtestLooksLikeRedBanner(subview, window)) dylibtestConfigureRedBanner(subview);
+        else dylibtestApplyRedBannerHook((UIWindow *)subview);
+    }
+}
+
 static void dylibtestApplyAppearanceToWindow(void) {
     dispatch_async(dispatch_get_main_queue(), ^{
         UIWindow *window = getCurrentWindow();
@@ -598,6 +637,7 @@ static void dylibtestApplyAppearanceToWindow(void) {
             window.overrideUserInterfaceStyle = dark ? UIUserInterfaceStyleDark : UIUserInterfaceStyleUnspecified;
             dylibtestApplyNavigationBarCustomization(window);
             dylibtestApplyAppearanceToView(window);
+            dylibtestApplyRedBannerHook(window);
         }
     });
 }
