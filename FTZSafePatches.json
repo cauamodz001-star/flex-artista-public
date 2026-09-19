@@ -1,0 +1,181 @@
+[
+  {
+    "name": "FTZ · WhatsApp — funções compatíveis",
+    "description": "Funções importadas da plist FTZ, filtradas por compatibilidade e segurança",
+    "enabled": false,
+    "units": [
+      {
+        "name": "WABadgedLabel · imageView",
+        "class": "WABadgedLabel",
+        "method": "imageView ➔ [object]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WABadgeView · message",
+        "class": "WABadgeView",
+        "method": "message ➔ [object]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAChatSession · displayName",
+        "class": "WAChatSession",
+        "method": "displayName ➔ [object]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAChatSession · lastIncomingMessage",
+        "class": "WAChatSession",
+        "method": "lastIncomingMessage ➔ [object]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAContact · isVerified",
+        "class": "WAContact",
+        "method": "isVerified ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WACoreColor · chatBadgeColor",
+        "class": "WACoreColor",
+        "method": "chatBadgeColor ➔ [object]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WACoreColor · mentionNameColor",
+        "class": "WACoreColor",
+        "method": "mentionNameColor ➔ [object]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAMessage · containsMentions",
+        "class": "WAMessage",
+        "method": "containsMentions ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAMessage · isMessageTextFromURL",
+        "class": "WAMessage",
+        "method": "isMessageTextFromURL ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAMessage · isTextOrURL",
+        "class": "WAMessage",
+        "method": "isTextOrURL ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAMessage · textContainsURLs",
+        "class": "WAMessage",
+        "method": "textContainsURLs ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAMessageContainer · isValid",
+        "class": "WAMessageContainer",
+        "method": "isValid ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAMessageID · isFromMe",
+        "class": "WAMessageID",
+        "method": "isFromMe ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAName · isVerifiedBusiness",
+        "class": "WAName",
+        "method": "isVerifiedBusiness ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAPBMessage · waPlaceholderStanzaId",
+        "class": "WAPBMessage",
+        "method": "waPlaceholderStanzaId ➔ [object]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAPBStorageCache_StorageCacheChat · descriptor",
+        "class": "WAPBStorageCache_StorageCacheChat",
+        "method": "descriptor ➔ [object]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WARichText · containsMentions",
+        "class": "WARichText",
+        "method": "containsMentions ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WAStashedMessage · containsMentions",
+        "class": "WAStashedMessage",
+        "method": "containsMentions ➔ [boolean]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      },
+      {
+        "name": "WASymbolCharacter · color",
+        "class": "WASymbolCharacter",
+        "method": "color ➔ [object]",
+        "overrideType": "default",
+        "customValue": "",
+        "arguments": [],
+        "source": "FTZ-safe"
+      }
+    ],
+    "source": "FTZ-safe"
+  }
+]

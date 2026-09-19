@@ -1,0 +1,469 @@
+=== notification ===
+@interface PeerMessages.PeerMessageStatusNotificationManager : _TtCs12_SwiftObject
+@interface WAAccountDefenseNotificationContent : NSObject
+@interface WADeviceLogoutNotification : NSObject
+- registerNotificationManager;
+- registerForNotificationsWithShowUserFacingNotification:;
+- initWithContext:xmppConnection:keyValueStore:interopManager:notificationCenter:;
+- showUserFacingNotificationWithContent:identifier:;
+@interface WAInterop.InteropReachabilityNotificationProcessor : WASingleNotificationProcessor
+- canProcessNotificationsWithDescriptor:;
+- processNotification:input:cancellationHandle:completion:;
+- applyDidChangeContentNotification:toCollectionView:currentIndexPath:onWillReloadCollectionView:completion:;
+- initWithFrame:options:origin:abProperties:notificationCenter:downloadSuspensionManager:;
+- handleKeyboardWillShowWithNotification:;
+- handleKeyboardWillHideWithNotification:;
+- textViewDidChangeNotification:;
+@interface WAOTPCodeNotificationObscurer : NSObject
+- logOtpMessageNotificationImpressionWithMessage:eventSource:ctaType:;
+- didReceiveRemoteNotificationWithMessageSessionId:authorJID:;
+@interface WAGraphQLNotificationMetadata : NSObject
+@interface WAGraphQLNotificationCallback : NSObject
+@interface WAGraphQLNotificationManager : NSObject
+- registerForNotifications;
+@interface GraphQL.GraphQLNotificationProcessor : WASingleNotificationProcessor
+- canProcessNotificationsWithDescriptor:;
+- processNotification:input:cancellationHandle:completion:;
+- setNotificationBadgeCount:;
+- stickyNotificationsOn;
+- notificationBadgeCount;
+- setStickyNotificationsOn:;
+- notificationSelectedCallRingtone;
+- notificationStatusItemOff;
+- notificationStatusItemBadgeOff;
+- notificationStatusPostedReminderOff;
+- muteCallNotificationsEndDate;
+- notificationMuteIncomingCalls;
+=== privacy ===
+@interface InteropPrivacySettingWithContactListUpdateMinimalBuilder : NSObject
+@interface InteropPrivacySettingWithContactListUpdatePandoBuilder : PNGraphQLQueryBuilder
+@interface InteropPrivacySettingsQueryMinimalBuilder : NSObject
+@interface InteropPrivacySettingsQueryPandoBuilder : PNGraphQLQueryBuilder
+@interface InteropPrivacySettingsUpdateMinimalBuilder : NSObject
+@interface InteropPrivacySettingsUpdatePandoBuilder : PNGraphQLQueryBuilder
+@interface WAInterop.InteropGroupPrivacySettingManager : WAObject
+- statusPrivacyAttributedString;
+- statusPrivacyAccessibilityString;
+- presentStatusPrivacySheetWithSourceView:;
+- statusPrivacyPolicyDidChange:;
+- statusPrivacyPolicyDidChangeFromSyncD:;
+- statusPrivacyPolicyDidUpdate:;
+- isEligibleForPrivacyTokens;
+- setStatusPrivacyPolicy:;
+- statusPrivacyPolicy;
+- privacyPreferences;
+@interface WAPrivacySystemMessageInsertionLogger : NSObject
+@interface WAMessagingInfraShared.ChatPrivacyControlMessageAdapter : _TtCs12_SwiftObject
+@interface WamEventAvatarPrivacySettings : WamEvent
+- is_avatar_privacy_settings_event_set;
+- avatar_privacy_settings_event;
+- setAvatar_privacy_settings_event:;
+- privacy_silence_unknown_caller;
+- setPrivacy_silence_unknown_caller:;
+- privacy_unknown_caller;
+- setPrivacy_unknown_caller:;
+@interface WamEventChannelsPrivacySettings : WamEvent
+- is_channels_privacy_action_set;
+- channels_privacy_action;
+- setChannels_privacy_action:;
+@interface WamEventCoexPrivacySysMsg : WamEvent
+- is_coex_status_reply_privacy_disclaimer_user_action_set;
+- coex_status_reply_privacy_disclaimer_user_action;
+- setCoex_status_reply_privacy_disclaimer_user_action:;
+=== readReceipt ===
+- readReceiptsPrivacySetting;
+- shouldBlockReadReceiptsForFirstMessageExperience;
+- shouldNotBlockReadReceiptsForMarketingMessageFromSMB;
+- readReceiptSettingsMixin;
+- readReceiptSettingsMixin;
+- needsSendReadReceipt;
+- isReadReceiptsEnabled;
+- shouldSendReadReceiptToChatJID:;
+- shouldSendReadReceiptToRemoteJIDEnum:;
+=== read_receipt ===
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- messages_received_with_enabled_read_receipt;
+- setMessages_received_with_enabled_read_receipt:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- read_receipts_enabled;
+- setRead_receipts_enabled:;
+- messages_received_with_enabled_read_receipt;
+=== typing ===
+- mediaEditorCaptionTextDidBeginTyping;
+- mediaEditorCaptionTextDidBeginTyping;
+- isTypingIndicatorEnabledOrDefault;
+- isTypingIndicatorEnabled;
+- typingProcessingLatencyFirstChar;
+- typingProcessingLatencyAverage;
+- logTypingStartTimeIfNeeded;
+- isTyping;
+- setTyping:;
+- shouldTrackTyping;
+- setShouldTrackTyping:;
+- isBusinessChatTypingIndicatorEnabled;
+- is_typing_indicator_enabled;
+- is_typing_indicator_enabled;
+- streamingTypingIndicatorTimeoutMs;
+- shouldShowBotTypingIndicator;
+- botTypingIndicatorTimeoutDate;
+- isBizProfileTypingIndicatorEnabled;
+- chat_list_typing_indicator_variant;
+- pre_slow_avg_typing_processing_threshold_ms;
+- multi_ppl_typing_indicator_for_chatlist_groups_variant;
+- disappearing_typing_indicator_bug_fix;
+- multi_ppl_typing_indicator_for_chatlist_groups_variant;
+- voice_chat_typing_indicator_tooltip;
+- one_on_one_vc_typing_indicator_tooltip;
+- identity_fetch_on_stale_chat_typing_intent;
+=== status ===
+@interface PeerMessages.PeerMessageStatusManager : _TtCs12_SwiftObject
+@interface PeerMessages.PeerMessageStatusNotificationManager : _TtCs12_SwiftObject
+- readerStatus;
+- status;
+- setStatus:;
+- loginStatusChangedWith:;
+- status;
+- setStatus:;
+- updateMetricsForOldStatus:newStatus:;
+- mediaPlayerStatusDidChange:;
+- status;
+- setPlayerItemStatus:;
+- playerItemStatus;
+- mediaPlayerStatusDidChange:;
+- setMentionsIconInStatusChipActive:;
+- setGroupStatusMultiSelect:;
+- setChannelStatusSelect:;
+- setChannelStatusPickerEnabled:;
+- groupStatusButtonTapped:;
+- channelStatusButtonTapped:;
+- statusButtonTapped:;
+- currentStatusDistributionInfo;
+- statusPrivacyAttributedString;
+- statusPrivacyAccessibilityString;
+- updateRenderingOfStatusAndRecipientChips;
+- createStatusChip;
+- presentStatusPrivacySheetWithSourceView:;
+- statusButton;
+- voiceOverStatusChanged:;
+- statusBarOffset;
+@interface WAStatusCreatorLoggingEventsHandler : WAMediaEditorEventsHandler
+- initWithLogger:statusCategory:;
+- statusCategory;
+@interface WAMediaEditorStatusCloseSharingRollbackPrecheck : WAMediaEditorPrecheck
+- initWithStatusComposerPresentingInfo:;
+=== presence ===
+- allowlisted_aIAgentUpsertThreadStateResolvingActorPresenceWithChatLid:aiReplyStatus:aiFeatureStatus:lastHandoffActor:hasLastHandoffActor:databaseAllowances:error:;
+- aIAgentUpsertThreadStateResolvingActorPresenceWithChatLid:aiReplyStatus:aiFeatureStatus:lastHandoffActor:hasLastHandoffActor:error:;
+@interface WamEventContactsPresenceRequestSummary : WamEvent
+- contacts_to_fetch_presence;
+- setContacts_to_fetch_presence:;
+- contacts_with_presence_success;
+- setContacts_with_presence_success:;
+- presence;
+- setPresence:;
+- presence_signal_rank;
+- setPresence_signal_rank:;
+- is_presence;
+- setIs_presence:;
+- presence_list;
+- setPresence_list:;
+@interface WamEventPresenceGroupChatOpen : WamEvent
+- is_group_presence_sub_type_set;
+- group_presence_sub_type;
+- setGroup_presence_sub_type:;
+- total_presence_sub_count;
+- setTotal_presence_sub_count:;
+- has_presence;
+- setHas_presence:;
+- setPresenceInactiveForChat:;
+- resetPresenceStateOnStreamClose;
+- processIncomingPresenceStanza:;
+- presenceControllerIsConnected:;
+- presenceController:sendStanza:;
+- presenceController:sendStanza:ignoreExclusive:;
+- presenceController:chatStateDidChangeForJID:;
+- presenceController:presenceDidChangeTo:forJID:;
+- presenceController:presenceDidChangeTo:;
+- presenceController;
+@interface XMPPPresenceController : NSObject
+- sendPresenceWithNickname:;
+=== online ===
+- showPositionLines;
+- hidePositionLines;
+- moveRotationLineWithTransform:rotation:moveIfInvisible:;
+- showRotationLineWithTransform:rotation:;
+- hideRotationLine;
+- is_online;
+- setIs_online:;
+- total_online_contacts;
+- setTotal_online_contacts:;
+- group_member_online_count;
+- setGroup_member_online_count:;
+- is_delivered_online;
+- setIs_delivered_online:;
+- online_count_entry;
+- setOnline_count_entry:;
+- online_count_exit;
+- setOnline_count_exit:;
+- online_count_max;
+- setOnline_count_max:;
+- showOnlineStatus;
+- setShowOnlineStatus:;
+- onlineParticipantUserJIDs;
+- setOnlineParticipantUserJIDs:;
+- startPingToServerForOnlineStanzaAcks;
+- stopPingToServerForOnlineStanzaAcks;
+- clearUnconfirmedAcksBeforeOnlineStanzaIfNeeded:;
+- onlineSettingsMixin;
+- onlineSettingsMixin;
+- progressiveExpansionLineOverride;
+- setProgressiveExpansionLineOverride:;
+- ios_contacts_hub_activity_online_weight;
+- ios_contacts_hub_activity_recently_online_weight;
+- ios_group_online_green_dot_enabled;
+- info_online_presence_text_enabled;
+- ios_prominent_online_indicator_variant;
+=== message ===
+@interface PeerMessages.PeerMessageCipher : _TtCs12_SwiftObject
+@interface WAPeerMessageManager : NSObject
+- handlePeerMessageReceipt:completion:;
+- handlePeerMessageAck:completion:;
+@interface PeerMessages.PeerMessageRetryer : _TtCs12_SwiftObject
+@interface PeerMessages.PeerMessageSender : _TtCs12_SwiftObject
+@interface PeerMessages.PeerMessageStanzaSender : _TtCs12_SwiftObject
+@interface PeerMessages.PeerMessageStatusManager : _TtCs12_SwiftObject
+@interface PeerMessages.PeerMessageStatusNotificationManager : _TtCs12_SwiftObject
+@interface PeerMessages.PeerMessageStorage : _TtCs12_SwiftObject
+- initWithMessage:;
+- initWithName:messages:;
+- setMessages:;
+- messages;
+@interface WAStoredMediaManagerDeletedMessage : NSObject
+- messageObjectID;
+- setMessageObjectID:;
+- initWithTotalMediaSize:mediaMessageCount:totalVideoSize:totalVideoCount:largeMessagesResult:forwardedMessagesResult:chatResults:zeroSizeChatResults:timestamp:;
+- largeMessagesResult;
+- forwardedMessagesResult;
+@interface WAStoredMediaManagerMessagesFetchResult : NSObject
+- initWithMessages:totalSize:totalCount:;
+- messages;
+@interface WAMigrationCoreShared.XPlatformMessagesExportService : _TtCs12_SwiftObject
+@interface WAMigrationCoreShared.XPlatformMessagesHeaderBuilder : _TtCs12_SwiftObject
+@interface WAMigrationCoreShared.XPlatformWebMessageInfoFactory : NSObject
+- messageInfoFromWAMessage:destinationEnum:;
+- messageInfoFromWAStashedMessage:companionDevice:;
+- configurePairedVideoMessagePreviewPlayer;
+- captionBarDidRequestSendMessage:;
+- showToastMessage:accessibilityText:;
+- checkInternetConnectionAndShowMessageIfNotAvailable;
+- showBadItemMessageForIndex:;
+- showHDUpdateToastMessage:;
+- overrideDiscardDialogMessage;
+=== bubble ===
+- setActiveBubble:;
+- bubbleLockPreferences;
+- paymentBubbleStringFromTransaction:;
+- about_chat_bubble_tap_count;
+- setAbout_chat_bubble_tap_count:;
+@interface WamEventChatBubbleRenderSummary : WamEvent
+- is_bubble_type_set;
+- bubble_type;
+- setBubble_type:;
+@interface WamEventChatBubbleRenderTime : WamEvent
+- is_chat_bubble_render_action_set;
+- chat_bubble_render_action;
+- setChat_bubble_render_action:;
+- is_chat_bubble_render_trigger_set;
+- chat_bubble_render_trigger;
+- setChat_bubble_render_trigger:;
+- is_chat_bubble_render_type_set;
+- chat_bubble_render_type;
+- setChat_bubble_render_type:;
+- chat_bubble_render_duration_ms;
+- setChat_bubble_render_duration_ms:;
+- chat_bubble_render_is_bot;
+- setChat_bubble_render_is_bot:;
+- chat_bubble_render_is_streaming_finished;
+- setChat_bubble_render_is_streaming_finished:;
+- chat_bubble_render_new_container;
+- setChat_bubble_render_new_container:;
+- message_bubble_height_px;
+- setMessage_bubble_height_px:;
+- message_bubble_width_px;
+- setMessage_bubble_width_px:;
+- message_bubble_height_px;
+- setMessage_bubble_height_px:;
+- message_bubble_width_px;
+- setMessage_bubble_width_px:;
+=== composer ===
+- initWithABProperties:downloadSuspensionManager:userContext:composerSessionId:useMMCKPlayer:;
+- initWithFrame:userContext:composerSessionId:useMMCKPlayer:eventsHandlers:;
+- initWithFrame:abProperties:downloadSuspensionManager:userContext:composerSessionId:useMMCKPlayer:;
+- initWithFrame:userContext:composerSessionId:useMMCKPlayer:eventsHandlers:;
+- initWithFrame:abProperties:downloadSuspensionManager:userContext:composerSessionId:useMMCKPlayer:;
+- initWithFrame:userContext:composerSessionId:useMMCKPlayer:eventsHandlers:;
+- initWithFrame:userContext:composerSessionId:useMMCKPlayer:eventsHandlers:;
+- initWithFrame:userContext:composerSessionId:useMMCKPlayer:eventsHandlers:;
+- initWithFrame:userContext:composerSessionId:useMMCKPlayer:allowsSendingAsLivePhoto:eventsHandlers:;
+- initWithFrame:userContext:composerSessionId:useMMCKPlayer:eventsHandlers:;
+- initWithFrame:userContext:composerSessionId:useMMCKPlayer:eventsHandlers:;
+- initWithStatusComposerPresentingInfo:;
+- statusComposerPresentingInfo;
+- initWithStatusComposerPresentingInfo:;
+- statusComposerPresentingInfo;
+- composerSessionId;
+- initWithFrame:userContext:composerSessionId:useMMCKPlayer:eventsHandlers:;
+- setStatusComposerPresentingInfo:;
+- statusComposerPresentingInfo;
+@interface WamEventChatComposerAction : WamEvent
+- is_chat_composer_action_target_set;
+- chat_composer_action_target;
+- setChat_composer_action_target:;
+- is_chat_composer_action_type_set;
+- chat_composer_action_type;
+- setChat_composer_action_type:;
+- has_composer_text;
+- setHas_composer_text:;
+- is_composer_status_set;
+- composer_status;
+- setComposer_status:;
+- num_words_composer_draft;
+- setNum_words_composer_draft:;
+- launch_composer_type;
+- setLaunch_composer_type:;
+=== video ===
+- initWithVideoFilePath:withCompletionHandler:;
+- createGIFForVideo;
+- createGIFForVideoWithMaxEdge:;
+@interface WALoopingVideoPlayerView : UIView
+- requestMediaDataWhenReadyOnQueueWithVideoView:playID:needsResetTiming:needsUnhideView:;
+- resetCurrentVideoView;
+- applyVideoFilterToSampleBuffer:;
+- videoFilter;
+- setVideoFilter:;
+- shouldReuseVideoView;
+- setShouldReuseVideoView:;
+- numberOfVideos;
+- initWithTotalMediaSize:mediaMessageCount:totalVideoSize:totalVideoCount:largeMessagesResult:forwardedMessagesResult:chatResults:zeroSizeChatResults:timestamp:;
+- totalVideoSize;
+- totalVideoCount;
+- videoGravity;
+- setVideoGravity:;
+- setVideoFrameRate:;
+- videoGravity;
+- setVideoGravity:;
+- setupVideoPlayerIfNeeded;
+- setupVideoPlayButton;
+- didTapVideoPlayButton;
+- isVideoPlaybackActive;
+- toggleVideoPlayback;
+- loopingVideoPlayerView:didChangeCurrentTime:;
+- setupVideoPlaybackWithURL:;
+- setVideoPlayerHidden:;
+- setVideoPlaybackFilter:;
+- removeVideoPlayback;
+- videoPlaybackEnabled;
+- setVideoPlaybackEnabled:;
+- hasVideoContent;
+@interface WAEditableVideoItemContainerView : UIView
+- configurePairedVideoMessagePreviewPlayer;
+=== media ===
+- generatePreparedSendMediaItemWithUserContext:completion:;
+- generateSendMediaItemFromURLWithUserContext:completion:;
+- assetLinkedFromMediaToGIFAssetPath:;
+- fullURLIsMediaFilePath;
+- requestMediaForView:resetTiming:;
+- requestMediaDataWhenReadyOnQueueWithVideoView:playID:needsResetTiming:needsUnhideView:;
+- isRequestingMedia;
+- setIsRequestingMedia:;
+- requestMediaDataWhenReadyOnQueue:usingBlock:;
+- stopRequestingMediaData;
+- setReadyForMoreMediaDataIfPossible;
+- mediaProviderQueue;
+- setMediaProviderQueue:;
+- mediaProviderBlock;
+- setMediaProviderBlock:;
+- isReadyForMoreMediaData;
+- setReadyForMoreMediaData:;
+- produceMediaDataForFrameSource:;
+- produceMediaData;
+@interface WAMediaCollectionViewCell : UICollectionViewCell
+- setMediaFavoritedWithDuration:;
+- setMediaDuration:mediaIconType:starred:kept:shouldHideBottomOverlay:;
+- setMediaDuration:mediaIconType:starred:kept:shouldHideBottomOverlay:customOverlayView:;
+- isInMediaHubEnvironment;
+- setIsInMediaHubEnvironment:;
+- mediaHubUserJourneyLogger;
+- setMediaHubUserJourneyLogger:;
+@interface WAMediaGalleryFlowLayout : UICollectionViewFlowLayout
+@interface WAMediaGalleryLayoutAttributes : UICollectionViewLayoutAttributes
+@interface WAMediaGallerySectionHeaderView : UICollectionReusableView
+- setIsInMediaHub:;
+- isInMediaHub;
+@interface WAMediaCaptionView : UIView
+@interface WAMediaPlayerTrack : UIView
+@interface WAMediaPlayerSlider : UISlider
+=== reaction ===
+- notificationStatusReactionAlertsOff;
+- showReactionsOnSG;
+- notificationGroupReactionAlertsOff;
+- notificationMessageReactionAlertsOff;
+- statusReactionsPreferences;
+- reactionPreferences;
+- customReactionsPreferences;
+@interface WAReactionAnimationController : NSObject
+@interface WAStatusReactionEmojis : NSObject
+- allowlisted_fetchStatusAddOnsOutgoingReactionWithStatusRowId:databaseAllowances:error:;
+- registerStatusAddOnsOutgoingReactionForStatusRowIDObserverWithBlock:queue:;
+- unregisterStatusAddOnsOutgoingReactionForStatusRowIDObserver:;
+- allowlisted_fetchStatusAddOnsIncomingReactionsWithStatusRowId:databaseAllowances:error:;
+- registerStatusAddOnsIncomingReactionsForStatusRowIDObserverWithBlock:queue:;
+- unregisterStatusAddOnsIncomingReactionsForStatusRowIDObserver:;
+- allowlisted_fetchStatusAddOnsIncomingReactionsWithDatabaseAllowances:error:;
+- registerStatusAddOnsIncomingReactionsObserverWithBlock:queue:;
+- unregisterStatusAddOnsIncomingReactionsObserver:;
+- fetchStatusAddOnsOutgoingReactionWithStatusRowId:error:;
+- registerStatusAddOnsOutgoingReactionForStatusRowIDObserverWithBlock:queue:;
+- unregisterStatusAddOnsOutgoingReactionForStatusRowIDObserver:;
+- fetchStatusAddOnsIncomingReactionsWithStatusRowId:error:;
+- registerStatusAddOnsIncomingReactionsForStatusRowIDObserverWithBlock:queue:;
+- unregisterStatusAddOnsIncomingReactionsForStatusRowIDObserver:;
+- fetchStatusAddOnsIncomingReactionsWithError:;
+- registerStatusAddOnsIncomingReactionsObserverWithBlock:queue:;
+- unregisterStatusAddOnsIncomingReactionsObserver:;
+- rx_reaction_count;
+- setRx_reaction_count:;
+- rx_reaction_error_count;
+- setRx_reaction_error_count:;
+- tx_reaction_count;
+- setTx_reaction_count:;
+- tx_reaction_error_count;
+- setTx_reaction_error_count:;

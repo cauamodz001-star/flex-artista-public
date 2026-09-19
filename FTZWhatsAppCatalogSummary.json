@@ -1,0 +1,12 @@
+{
+  "patches": 3,
+  "units": 3,
+  "uniqueClasses": 2,
+  "uniqueSelectors": 3,
+  "onlyFeatures": [
+    "message-trigger-reply",
+    "preserve-composer-text",
+    "preserve-composer-selection"
+  ],
+  "importMode": "manual plist/ZIP remains available"
+}

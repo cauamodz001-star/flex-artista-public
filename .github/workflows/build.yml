@@ -1,0 +1,41 @@
+name: Build tweak
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+permissions:
+  contents: read
+env:
+  THEOS: ${{ github.workspace }}/theos
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install build tools
+        run: brew install dpkg ldid
+      - name: Install Theos and SDKs
+        run: |
+          git clone --recursive --depth 1 https://github.com/theos/theos.git "$THEOS"
+          rm -rf "$THEOS/sdks"
+          git clone --depth 1 https://github.com/theos/sdks.git "$RUNNER_TEMP/theos-sdks"
+          mkdir -p "$THEOS/sdks"
+          cp -R "$RUNNER_TEMP/theos-sdks/." "$THEOS/sdks/"
+          echo "THEOS=$THEOS" >> "$GITHUB_ENV"
+      - name: Build package
+        run: make clean package FINALPACKAGE=1
+      - name: Collect artifacts
+        run: |
+          mkdir -p artifacts
+          find packages -type f \( -name '*.deb' -o -name '*.dylib' \) -exec cp {} artifacts/ \; 2>/dev/null || true
+          find .theos -type f -name '*.dylib' -exec cp {} artifacts/ \; 2>/dev/null || true
+          test -n "$(find artifacts -type f -print -quit)"
+          ls -lh artifacts
+      - name: Upload dylib and deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: dylibtest-${{ github.sha }}
+          path: artifacts/*
+          if-no-files-found: error
+          retention-days: 14
