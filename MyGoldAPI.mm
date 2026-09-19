@@ -96,7 +96,13 @@ static UIWindow *MyGoldActiveWindow(void) {
         if (![scene isKindOfClass:UIWindowScene.class]) continue;
         for (UIWindow *window in ((UIWindowScene *)scene).windows) if (window.isKeyWindow) return window;
     }
-    return UIApplication.sharedApplication.windows.firstObject;
+    for (UIScene *scene in UIApplication.sharedApplication.connectedScenes) {
+        if (![scene isKindOfClass:UIWindowScene.class]) continue;
+        UIWindowScene *windowScene = (UIWindowScene *)scene;
+        if (windowScene.activationState == UISceneActivationStateUnattached) continue;
+        if (windowScene.windows.firstObject) return windowScene.windows.firstObject;
+    }
+    return nil;
 }
 
 @implementation MyGoldLoginViewController {
