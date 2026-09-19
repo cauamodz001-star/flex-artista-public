@@ -5,6 +5,8 @@
 
 static NSString * const kLicenseURL = @"https://aulh-hook.squareweb.app/api/login";
 static NSString * const kSavedKey = @"dylibtest.license.key";
+static NSString * const kPackageID = @"mygold-app";
+static NSString * const kPackageToken = @"change-this-package-token";
 
 @interface MyGoldAPI : NSObject
 @property(nonatomic, copy) NSString *username;
@@ -65,6 +67,8 @@ static NSString * const kSavedKey = @"dylibtest.license.key";
     request.timeoutInterval = 15.0;
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:kPackageID forHTTPHeaderField:@"X-Package-ID"];
+    [request setValue:kPackageToken forHTTPHeaderField:@"X-Package-Token"];
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) { self.authenticated = NO; if (completion) completion(NO, @"Não foi possível conectar ao servidor."); return; }
