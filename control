@@ -1,0 +1,8 @@
+Package: com.yourcompany.dylibtest
+Name: Flex Artista
+Version: 0.0.3
+Architecture: iphoneos-arm
+Description: Flex Artista tweak with remote key validation and floating menu
+Maintainer: Flex Artista
+Author: Flex Artista
+Section: Tweaks
