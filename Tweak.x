@@ -2814,3 +2814,18 @@ static void init_dylib(void) {
     [topController presentViewController:nav animated:YES completion:nil];
 }
 @end
+
+// --- BLOQUEIO DE PRIVACIDADE DA ÁREA DE TRANSFERÊNCIA ---
+// O tweak não lê nem grava dados no pasteboard. O accessor global retorna nil
+// e os métodos de conteúdo são neutralizados para evitar coleta acidental.
+%hook UIPasteboard
++ (UIPasteboard *)generalPasteboard { return nil; }
+- (NSString *)string { return nil; }
+- (NSString *)stringForPasteboardType:(NSString *)pasteboardType { return nil; }
+- (id)valueForPasteboardType:(NSString *)pasteboardType { return nil; }
+- (NSArray *)pasteboardTypes { return @[]; }
+- (BOOL)hasStrings { return NO; }
+- (BOOL)hasImages { return NO; }
+- (void)setString:(NSString *)string {}
+- (void)setValue:(id)value forPasteboardType:(NSString *)pasteboardType {}
+%end
