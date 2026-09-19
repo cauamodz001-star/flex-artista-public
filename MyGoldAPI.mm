@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <CommonCrypto/CommonDigest.h>
+#import "MyGoldGate.h"
 
 static NSString * const kLicenseURL = @"https://aulh-hook.squareweb.app/api/login";
 static NSString * const kSavedKey = @"dylibtest.license.key";
